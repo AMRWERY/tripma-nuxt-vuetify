@@ -13,6 +13,18 @@
     "change_language": "تغيير اللغة"
   },
   "home": {
-    "find_your_reservation": "ابحث عن الحجز الخاص بك"
+    "find_your_reservation": "ابحث عن الحجز الخاص بك",
+    "you_can_search_for_your_reservation_with_your_20_character_reservation_code": "يمكنك البحث عن حجزك باستخدام رمز الحجز المكون من 20 حرفًا",
+    "fly_next_package": "يطير الحزمة التالية",
+    "your_great_destination": "وجهتك العظيمة",
+    "flights": "الرحلات الجوية",
+    "car_rentals": "تأجير السيارات",
+    "hotels": "الفنادق"
+  },
+  "our_service": {
+    "our_service": "خدمتنا",
+    "we_offer_you_travel_services_in_order_to_facilitate": "نحن نقدم لك خدمات السفر لتسهيل الأمر",
+    "everything_on_your_trip_and_provide_full_fun_only_you_have_to": "كل شيء في رحلتك وتوفير المتعة الكاملة، كل ما عليك هو",
+    "decide_and_we_have_to_meet": "تقرر وعلينا أن نلتقي"
   }
 }

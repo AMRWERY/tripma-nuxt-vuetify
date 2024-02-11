@@ -13,6 +13,18 @@
     "change_language": "Change Language"
   },
   "home": {
-    "find_your_reservation": "Find Your Reservation"
+    "find_your_reservation": "Find Your Reservation",
+    "you_can_search_for_your_reservation_with_your_20_character_reservation_code": "You can search for your reservation with your 20-character reservation code",
+    "fly_next_package": "Fly Next Package",
+    "your_great_destination": "Your Great Destination",
+    "flights": "Flights",
+    "car_rentals": "Car Rentals",
+    "hotels": "Hotels"
+  },
+  "our_service": {
+    "our_service": "Our Service",
+    "we_offer_you_travel_services_in_order_to_facilitate": "We offer you travel services in order to facilitate",
+    "everything_on_your_trip_and_provide_full_fun_only_you_have_to": "Everything on your trip and provide full fun. Only you have to",
+    "decide_and_we_have_to_meet": "Decide and we have to meet"
   }
 }

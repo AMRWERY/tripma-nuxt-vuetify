@@ -2,11 +2,15 @@
     <v-container>
         <v-row dense>
             <v-col class="text-center">
-                <p class="text-h4 font-weight-bold">Our Service</p>
+                <p class="text-h4 font-weight-bold">{{ $t('our_service.our_service') }}</p>
                 <div class="text-subtitle-1 mt-6">
-                    <p>We offer you travel services in order to facilitate everything on your trip and provide full fun.
-                        Only you have to</p>
-                    <p>decide and we have to meet</p>
+                    <p>{{
+                        $t('our_service.we_offer_you_travel_services_in_order_to_facilitate')
+                    }}
+                        <span>{{ $t('our_service.everything_on_your_trip_and_provide_full_fun_only_you_have_to') }}</span>
+                    </p>
+
+                    <p>{{ $t('our_service.decide_and_we_have_to_meet') }}</p>
                 </div>
             </v-col>
         </v-row>
