@@ -18,7 +18,7 @@
             <v-col cols="12" md="6" v-for="card in cards" :key="card" :to="card">
                 <v-card class="mx-auto card" max-width="500" height="420" hover>
                     <v-img :src="card.img" height="300px" cover class="align-end text-indigo">
-                        <v-card-title class="font-weight-bold">{{ card.title }}</v-card-title>
+                        <v-card-title class="font-weight-bold">{{ $t(card.title) }}</v-card-title>
                     </v-img>
                     <v-card-text>
                         {{ card.desc }}
@@ -28,10 +28,11 @@
         </v-row>
         <v-row dense>
             <v-col class="text-center my-6">
-                <p class="text-h4 font-weight-bold">Tripma Applications</p>
+                <p class="text-h4 font-weight-bold">{{ $t('our_service.tripma_applications') }}</p>
                 <div class="text-subtitle-1">
-                    <p>You can now enjoy the services of the SeasonsTour easily through mobile applications for the
-                        SeasonsTour on the Google Store and the Apple Store</p>
+                    <p>{{
+                        $t('our_service.you_can_now_enjoy_the_services_of_the_tripma_easily_through_mobile_applications_for_the_tripma_on_the_google_store_and_the_apple_store')
+                    }}</p>
                 </div>
             </v-col>
         </v-row>
@@ -58,10 +59,10 @@
   
 <script setup>
 const cards = ref([
-    { title: 'Flight Reservation', desc: 'You no longer have to worry about your flight booking, you now have a whole team tasked with fulfilling your request in this regard and making sure that everything is ready for your convenience.', img: 'https://justfields.com/storage/projects/7M5rV059/flights.png', route: '/forms/flight-reservations-form' },
-    { title: 'Programs', desc: 'You can choose what suits you from our integrated programs and provide everything you need during your trip, starting from flight reservations, hotel reservations, car rental and all the services you may need during your trip.', img: 'https://justfields.com/storage/projects/7M5rV059/programs.png', route: '/forms/programs-form' },
-    { title: 'Hotel Reservation', desc: 'We are in Seasons Tour. We do not care about anything but your comfort , so we were keen to search for the best hotels with the best offers to make sure that you will get what you deserve from the comfort, privacy and fun during your trip.', img: 'https://justfields.com/storage/projects/7M5rV059/hotels.png', route: '/forms/hotel-reservation-form' },
-    { title: 'Car Rental', desc: 'Car rental service to provide you with comfort, privacy and save time during internal transfers throughout your stay.', img: 'https://justfields.com/storage/projects/7M5rV059/cars.png', route: '/forms/car-rental-form' },
+    { title: 'our_service.flight_reservation', desc: 'You no longer have to worry about your flight booking, you now have a whole team tasked with fulfilling your request in this regard and making sure that everything is ready for your convenience.', img: 'https://justfields.com/storage/projects/7M5rV059/flights.png', route: '/forms/flight-reservations-form' },
+    { title: 'layout.programs', desc: 'You can choose what suits you from our integrated programs and provide everything you need during your trip, starting from flight reservations, hotel reservations, car rental and all the services you may need during your trip.', img: 'https://justfields.com/storage/projects/7M5rV059/programs.png', route: '/forms/programs-form' },
+    { title: 'our_service.hotel_reservation', desc: 'We are in Seasons Tour. We do not care about anything but your comfort , so we were keen to search for the best hotels with the best offers to make sure that you will get what you deserve from the comfort, privacy and fun during your trip.', img: 'https://justfields.com/storage/projects/7M5rV059/hotels.png', route: '/forms/hotel-reservation-form' },
+    { title: 'home.car_rentals', desc: 'Car rental service to provide you with comfort, privacy and save time during internal transfers throughout your stay.', img: 'https://justfields.com/storage/projects/7M5rV059/cars.png', route: '/forms/car-rental-form' },
 ])
 
 const appStoreImage = 'https://justfields.com/storage/projects/7M5rV059/appstore.png'
@@ -79,4 +80,3 @@ const googlePlayImage = 'https://seasonstours.netlify.app/images/googleplay.png'
     transform: scale(1.05);
 }
 </style>
-  
