@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       });
     },
     "@pinia/nuxt",
+    "@nuxtjs/i18n",
   ],
   vite: {
     vue: {
@@ -23,6 +24,9 @@ export default defineNuxtConfig({
   },
   pinia: {
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
+  },
+  i18n: {
+    vueI18n: "./i18n.config.ts",
   },
   css: ["./assets/css/main.css"],
   components: [

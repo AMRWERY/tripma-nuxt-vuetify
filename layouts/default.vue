@@ -18,6 +18,10 @@
                 <v-tooltip activator="parent" location="bottom">Change Theme</v-tooltip>
                 <v-icon :icon="theme.global.current.value.dark ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'" />
             </v-btn>
+            <v-btn variant="text" icon @click="switchLanguage">
+                <v-tooltip activator="parent" location="bottom">Change Language</v-tooltip>
+                <v-icon icon="mdi-google-translate" />
+            </v-btn>
             <v-btn variant="elevated" color="indigo" rounded="lg" size="large" class="text-capitalize mx-1"
                 to="/auth">Login</v-btn>
             <v-btn variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex">
@@ -51,12 +55,14 @@
 
 <script setup>
 import { useTheme } from 'vuetify'
+import { useI18n } from 'vue-i18n'
 
 const theme = useTheme()
 const drawer = ref(false)
+const { t } = useI18n();
 
 const links = reactive([
-    { title: 'Home', route: '/' },
+    { title: t('layout.home'), route: '/' },
     { title: "Our Service", route: '/our-service' },
     { title: "Programs", route: '/programs' },
     { title: "About Us", route: '' },
@@ -66,4 +72,42 @@ const links = reactive([
 const toggleTheme = () => {
     theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
 }
+
+const switchLanguage = () => {
+    const newLang = $i18n.locale.value === 'en' ? 'ar' : 'en';
+    if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem('currentLang', newLang);
+    }
+    $i18n.locale.value = newLang;
+    updateLanguageClassInBody(newLang);
+};
+
+const updateLanguageClassInBody = (lang) => {
+    const body = document.querySelector("body");
+    if (lang === "ar") {
+        body.classList.remove("ltr");
+        body.classList.add("rtl");
+    } else {
+        body.classList.remove("rtl");
+        body.classList.add("ltr");
+    }
+};
+
+const $i18n = useI18n()
+
+// Initialize language preference when the page loads
+const initialLang = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('currentLang') : null;
+if (initialLang) {
+    $i18n.locale.value = initialLang;
+    updateLanguageClassInBody(initialLang);
+}
+
+const currentLang = computed(() => $i18n.locale.value);
+
+watch(currentLang, (newLang) => {
+    if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem("currentLang", newLang);
+    }
+    updateLanguageClassInBody(newLang);
+});
 </script>

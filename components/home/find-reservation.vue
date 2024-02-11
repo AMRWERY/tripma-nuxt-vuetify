@@ -2,7 +2,7 @@
     <v-container>
         <v-row align="center" justify="center">
             <v-col class="text-center">
-                <p class="text-h4 font-weight-medium">Find Your Reservation</p>
+                <p class="text-h4 font-weight-medium">{{ $t('layout.find_your_reservation') }}</p>
                 <p class="text-subtitle-1">You can search for your reservation with your 20-character reservation code
                 </p>
                 <v-card class="mx-auto mt-6" max-width="400" flat>
