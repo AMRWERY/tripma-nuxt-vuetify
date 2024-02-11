@@ -1,6 +1,18 @@
 {
   "layout": {
     "home": "Home",
+    "our_service": "Our Service",
+    "programs": "Programs",
+    "about_us": "About Us",
+    "contact_us": "Contact Us"
+  },
+  "tooltip": {
+    "profile": "Profile",
+    "dashboard": "Dashboard",
+    "change_theme": "Change Theme",
+    "change_language": "Change Language"
+  },
+  "home": {
     "find_your_reservation": "Find Your Reservation"
   }
 }

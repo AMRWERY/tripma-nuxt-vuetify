@@ -1,6 +1,18 @@
 {
   "layout": {
     "home": "الرئيسيه",
+    "our_service": "خدمتنا",
+    "programs": "البرامج",
+    "about_us": "معلومات عنا",
+    "contact_us": "اتصل بنا"
+  },
+  "tooltip": {
+    "profile": "حساب تعريفي",
+    "dashboard": "لوحة القيادة",
+    "change_theme": "تغيير الخلفية",
+    "change_language": "تغيير اللغة"
+  },
+  "home": {
     "find_your_reservation": "ابحث عن الحجز الخاص بك"
   }
 }

@@ -2,24 +2,24 @@
     <v-layout>
         <v-app-bar color="#0a2339" prominent>
             <v-list bg-color="#0a2339" class="ml-3 d-none d-sm-none d-md-flex d-lg-flex">
-                <v-list-item link density="compact" v-for="link in links" :key="link" :title="link.title"
+                <v-list-item link density="compact" v-for="link in links" :key="link" :title="t(link.title)"
                     :to="link.route" />
             </v-list>
             <v-spacer />
             <v-btn variant="text" icon>
-                <v-tooltip activator="parent" location="bottom">Profile</v-tooltip>
+                <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.profile') }}</v-tooltip>
                 <v-icon icon="mdi-account" size="large" />
             </v-btn>
             <v-btn variant="text" icon>
-                <v-tooltip activator="parent" location="bottom">Dashboard</v-tooltip>
+                <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.dashboard') }}</v-tooltip>
                 <v-icon icon="mdi-monitor-dashboard" size="large" />
             </v-btn>
             <v-btn variant="text" icon @click="toggleTheme">
-                <v-tooltip activator="parent" location="bottom">Change Theme</v-tooltip>
+                <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.change_theme') }}</v-tooltip>
                 <v-icon :icon="theme.global.current.value.dark ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'" />
             </v-btn>
             <v-btn variant="text" icon @click="switchLanguage">
-                <v-tooltip activator="parent" location="bottom">Change Language</v-tooltip>
+                <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.change_language') }}</v-tooltip>
                 <v-icon icon="mdi-google-translate" />
             </v-btn>
             <v-btn variant="elevated" color="indigo" rounded="lg" size="large" class="text-capitalize mx-1"
@@ -62,11 +62,11 @@ const drawer = ref(false)
 const { t } = useI18n();
 
 const links = reactive([
-    { title: t('layout.home'), route: '/' },
-    { title: "Our Service", route: '/our-service' },
-    { title: "Programs", route: '/programs' },
-    { title: "About Us", route: '' },
-    { title: "Contact Us", route: '' },
+    { title: 'layout.home', route: '/' },
+    { title: 'layout.our_service', route: '/our-service' },
+    { title: 'layout.programs', route: '/programs' },
+    { title: 'layout.about_us', route: '' },
+    { title: 'layout.contact_us', route: '' },
 ]);
 
 const toggleTheme = () => {
@@ -95,7 +95,6 @@ const updateLanguageClassInBody = (lang) => {
 
 const $i18n = useI18n()
 
-// Initialize language preference when the page loads
 const initialLang = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('currentLang') : null;
 if (initialLang) {
     $i18n.locale.value = initialLang;
