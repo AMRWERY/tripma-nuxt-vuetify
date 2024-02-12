@@ -1,5 +1,13 @@
 <template>
     <v-container class="pa-4 text-center">
+        <v-row align="center" justify="center">
+            <v-col class="text-center">
+                <p class="text-h4 font-weight-medium">{{ $t('home.find_your_reservation') }}</p>
+                <p class="text-subtitle-1">{{
+                    $t('home.you_can_search_for_your_reservation_with_your_20_character_reservation_code') }}
+                </p>
+            </v-col>
+        </v-row>
         <v-row class="fill-height" align="center" justify="center">
             <template v-for="offer in store.places" :key="offer">
                 <v-col cols="12" md="4">

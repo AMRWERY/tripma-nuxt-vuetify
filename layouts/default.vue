@@ -15,11 +15,11 @@
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.dashboard') }}</v-tooltip>
                     <v-icon icon="mdi-monitor-dashboard" size="large" />
                 </v-btn>
-                <v-btn variant="text" icon @click="toggleTheme">
+                <!-- <v-btn variant="text" icon @click="toggleTheme">
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.change_theme') }}</v-tooltip>
                     <v-icon
                         :icon="theme.global.current.value.dark ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'" />
-                </v-btn>
+                </v-btn> -->
                 <v-btn variant="text" icon @click="switchLanguage">
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.change_language') }}</v-tooltip>
                     <v-icon icon="mdi-google-translate" />
@@ -57,10 +57,10 @@
 </template>
 
 <script setup>
-import { useTheme } from 'vuetify'
+// import { useTheme } from 'vuetify'
 import { useI18n } from 'vue-i18n'
 
-const theme = useTheme()
+// const theme = useTheme()
 const drawer = ref(false)
 const { t } = useI18n();
 
@@ -72,9 +72,9 @@ const links = reactive([
     { title: 'layout.contact_us', route: '' },
 ]);
 
-const toggleTheme = () => {
-    theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
-}
+// const toggleTheme = () => {
+//     theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+// }
 
 const switchLanguage = () => {
     const newLang = $i18n.locale.value === 'en' ? 'ar' : 'en';
