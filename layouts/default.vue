@@ -25,7 +25,7 @@
                     <v-icon icon="mdi-google-translate" />
                 </v-btn>
                 <v-btn variant="elevated" color="indigo" rounded="lg" size="large" class="text-capitalize mx-1"
-                    to="/auth">Login</v-btn>
+                    to="/login">Login</v-btn>
                 <v-btn variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex">
                     <v-tooltip activator="parent" location="bottom">Logout</v-tooltip>
                     <v-icon icon="mdi-logout" size="large" />
