@@ -71,8 +71,8 @@ const email = ref('')
 const password = ref('')
 const username = ref('')
 
-const signUp = () => {
-    store.userSignUp({
+const signUp = async () => {
+    await store.userSignUp({
         email: email.value,
         password: password.value,
         username: username.value

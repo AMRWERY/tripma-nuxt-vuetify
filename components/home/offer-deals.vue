@@ -4,7 +4,7 @@
             <v-col class="text-center">
                 <p class="text-h4 font-weight-medium">{{ $t('home.find_your_reservation') }}</p>
                 <p class="text-subtitle-1">{{
-                    $t('home.you_can_search_for_your_reservation_with_your_20_character_reservation_code') }}
+                                    $t('home.you_can_search_for_your_reservation_with_your_20_character_reservation_code') }}
                 </p>
             </v-col>
         </v-row>
@@ -48,7 +48,6 @@
 import { useOfferDealsStore } from '@/stores/offerDealsStore'
 
 const store = useOfferDealsStore()
-// const icons = ref(['mdi-rewind', 'mdi-play', 'mdi-fast-forward'])
 
 onMounted(() => {
     store.fetchPlaces()
@@ -63,8 +62,4 @@ onMounted(() => {
 .v-card:not(.on-hover) {
     opacity: 0.7;
 }
-
-/* .show-btns {
-    color: rgba(255, 255, 255, 1) !important;
-} */
 </style>
