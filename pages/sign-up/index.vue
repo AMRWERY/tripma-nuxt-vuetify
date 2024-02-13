@@ -20,17 +20,19 @@
                                             <v-row>
                                                 <v-col cols="12" sm="6">
                                                     <v-text-field label="First Name" variant="outlined" density="compact"
-                                                        color="blue" class="mt-4" />
+                                                        color="blue" class="mt-4" v-model="firstName"
+                                                        :rules="firstNameRules" />
                                                 </v-col>
                                                 <v-col cols="12" sm="6">
                                                     <v-text-field label="Last Name" variant="outlined" density="compact"
-                                                        color="blue" class="mt-4" />
+                                                        color="blue" class="mt-4" v-model="lastName"
+                                                        :rules="lastNameRules" />
                                                 </v-col>
                                             </v-row>
                                             <v-text-field label="Email" variant="outlined" density="compact" color="blue"
-                                                v-model="email" />
+                                                v-model="email" :rules="emailRules" />
                                             <v-text-field label="Password" variant="outlined" density="compact" color="blue"
-                                                type="password" v-model="password" />
+                                                type="password" v-model="password" :rules="passwordRules" />
                                             <v-btn type="submit" color="indigo" block class="text-capitalize">Sign
                                                 up</v-btn>
                                         </v-form>
@@ -66,20 +68,50 @@
 <script setup>
 import { useAuthStore } from '@/stores/authStore'
 
-const store = useAuthStore()
+const firstNameRules = [
+    value => {
+        if (value?.length > 2) return true
+        return 'First name must be at least 2 characters.'
+    },
+]
+
+const lastNameRules = [
+    value => {
+        if (value?.length > 2) return true
+        return 'Last name must be at least 2 characters.'
+    },
+]
+
+const emailRules = [
+    value => {
+        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+        return 'Must be a valid e-mail.'
+    },
+]
+
+const passwordRules = [
+    value => {
+        if (value?.length >= 7) return true
+        return 'Password must be at least 7 characters'
+    },
+]
+
 const email = ref('')
 const password = ref('')
-const username = ref('')
+const firstName = ref('')
+const lastName = ref('')
+
+const store = useAuthStore()
 
 const signUp = async () => {
+    if (!validateFields()) return;
+
     await store.userSignUp({
         email: email.value,
         password: password.value,
-        username: username.value
+        firstName: firstName.value,
+        lastName: lastName.value
     });
-    email.value = ''
-    password.value = ''
-    username.value = ''
 };
 
 const signUpWithGoogleAccount = () => {
@@ -87,6 +119,22 @@ const signUpWithGoogleAccount = () => {
         email: email.value,
         username: username.value
     });
+};
+
+const validateFields = () => {
+    const validations = [
+        ...firstNameRules.map(rule => rule(firstName.value)),
+        ...lastNameRules.map(rule => rule(lastName.value)),
+        ...emailRules.map(rule => rule(email.value)),
+        ...passwordRules.map(rule => rule(password.value))
+    ];
+
+    const errors = validations.filter(result => typeof result === 'string');
+    if (errors.length > 0) {
+        errors.forEach(error => console.error(error));
+        return false;
+    }
+    return true;
 };
 </script>
 

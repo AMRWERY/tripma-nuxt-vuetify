@@ -26,7 +26,8 @@ export const useAuthStore = defineStore("auth", {
   state: () => {
     return {
       isAuthenticated: false,
-      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
       userToken: null,
@@ -37,13 +38,14 @@ export const useAuthStore = defineStore("auth", {
   actions: {
     userSignUp(payload) {
       const router = useRouter();
-      const { email, password, username } = payload;
+      const { email, password, firstName, lastName } = payload;
       createUserWithEmailAndPassword(auth, email, password)
         .then(async (userCredential) => {
           const user = userCredential.user;
           if (user) {
             sessionStorage.setItem("password", password);
-            sessionStorage.setItem("username", username);
+            sessionStorage.setItem("firstName", firstName);
+            sessionStorage.setItem("lastName", lastName);
             sessionStorage.setItem("email", email);
             router.replace("/");
             try {
@@ -54,7 +56,8 @@ export const useAuthStore = defineStore("auth", {
               sessionStorage.setItem("userToken", token);
               sessionStorage.setItem("userId", user.uid);
               await addDoc(collection(db, "users"), {
-                username: payload.username,
+                firstName: payload.firstName,
+                lastName: payload.lastName,
                 email: payload.email,
                 password: payload.password,
                 id: user.uid,
