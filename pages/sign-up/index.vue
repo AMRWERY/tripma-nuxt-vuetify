@@ -105,7 +105,6 @@ const store = useAuthStore()
 
 const signUp = async () => {
     if (!validateFields()) return;
-
     await store.userSignUp({
         email: email.value,
         password: password.value,

@@ -26,7 +26,7 @@
                 </v-btn>
                 <v-btn variant="elevated" color="indigo" rounded="lg" size="large" class="text-capitalize mx-1"
                     to="/login">Login</v-btn>
-                <v-btn variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex">
+                <v-btn variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex" @click="logout">
                     <v-tooltip activator="parent" location="bottom">Logout</v-tooltip>
                     <v-icon icon="mdi-logout" size="large" />
                 </v-btn>
@@ -34,13 +34,13 @@
                     @click.stop="drawer = !drawer" />
             </v-app-bar>
 
-            <v-navigation-drawer v-model="drawer" location="left" temporary color="#0a2339">
+            <v-navigation-drawer v-model="drawer" :location="drawerLocation" temporary color="#0a2339">
                 <v-list>
-                    <v-list-item link v-for="link in links" :key="link" :title="link.title" :to="link.route" />
+                    <v-list-item link v-for="link in links" :key="link" :title="t(link.title)" :to="link.route" />
                 </v-list>
                 <template v-slot:append>
                     <div class="pa-2">
-                        <v-btn block color="indigo" rounded="lg" size="large" class="text-capitalize">
+                        <v-btn block color="indigo" rounded="lg" size="large" class="text-capitalize" @click="logout">
                             Logout
                         </v-btn>
                     </div>
@@ -57,9 +57,11 @@
 </template>
 
 <script setup>
+import { useAuthStore } from '@/stores/authStore'
 // import { useTheme } from 'vuetify'
 import { useI18n } from 'vue-i18n'
 
+const store = useAuthStore()
 // const theme = useTheme()
 const drawer = ref(false)
 const { t } = useI18n();
@@ -104,7 +106,13 @@ if (initialLang) {
     updateLanguageClassInBody(initialLang);
 }
 
+const determineDrawerLocation = () => {
+    return isRTL.value ? 'right' : 'left';
+};
+
 const currentLang = computed(() => $i18n.locale.value);
+
+const drawerLocation = computed(() => determineDrawerLocation());
 
 const isRTL = computed(() => $i18n.locale.value === 'ar');
 
@@ -114,4 +122,12 @@ watch(currentLang, (newLang) => {
     }
     updateLanguageClassInBody(newLang);
 });
+
+const logout = () => {
+    try {
+        store.logout();
+    } catch (error) {
+        console.log(error);
+    }
+}
 </script>
