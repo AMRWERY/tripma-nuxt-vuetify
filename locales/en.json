@@ -10,7 +10,23 @@
     "do_not_have_an_account_yet?": "Don't Have an Account Yet?",
     "let_is_get_you_all_set_up_so_you_can_start_creating_your_first": "Let's get you all set up so you can start creating your your first",
     "onboarding_experience": "onboarding experience",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "sign_up_for_an_account": "Sign Up for an Account",
+    "let_is_get_you_all_set_up_so_you_can_start_creatin_your": "Let's get you all set up so you can start creatin your",
+    "first_onboarding_experience": "first onboarding experience",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "or_sign_up_using": "Or Sign up using",
+    "already_have_an_account?": "Already have an account?",
+    "please_login": "Please Login",
+    "back_to_login": "Back to Login",
+    "enter_email_address_associated_with_your_account": "Enter email address associated with your account",
+    "and_we_will_send_otp_code_to_reset_your_password": "and we'll send otp code to reset your password",
+    "verify_your_account": "Verify Your Account",
+    "we_sent_a_verification_code_to": "We sent a verification code to",
+    "please_check_your_email_and_paste_the_code_below": "Please check your email and paste the code below",
+    "did_not_receive_the_code?": "Didn't receive the code?",
+    "resend": "Resend"
   },
   "layout": {
     "home": "Home",
@@ -46,10 +62,15 @@
   },
   "btn": {
     "login": "Login",
-    "google": "Google"
+    "google": "Google",
+    "sign_up": "Sign up",
+    "continue": "Continue",
+    "verify": "Verify"
   },
   "form_validation": {
     "must_be_a_valid_email": "Must be a valid email",
-    "password_must_be_at_least_7_characters": "Password must be at least 7 characters"
+    "password_must_be_at_least_7_characters": "Password must be at least 7 characters",
+    "first_name_must_be_at_least_2_characters": "First name must be at least 2 characters",
+    "last_name_must_be_at_least_2_characters": "Last name must be at least 2 characters"
   }
 }

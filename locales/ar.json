@@ -10,7 +10,23 @@
     "do_not_have_an_account_yet?": "لا تملك حسابا حتى الآن؟",
     "let_is_get_you_all_set_up_so_you_can_start_creating_your_first": "دعنا نجهزك جميعًا حتى تتمكن من البدء في إنشاء موقعك الأول",
     "onboarding_experience": "تجربة الإعداد",
-    "sign_up": "اشتراك"
+    "sign_up": "اشتراك",
+    "sign_up_for_an_account": "التسجيل للحصول على حساب",
+    "let_is_get_you_all_set-up_so_you_can_start_creatin_your": "دعنا نجهزك جميعًا حتى تتمكن من البدء في إنشاء ملفك الشخصي",
+    "first_onboarding_experience": "أول تجربة على متن الطائرة",
+    "first_name": "الاسم الأول",
+    "last_name": "اسم العائلة",
+    "or_sign_up_using": "أو قم بالتسجيل باستخدام",
+    "already_have_an_account?": "هل لديك حساب؟",
+    "please_login": "الرجاء تسجيل الدخول",
+    "back_to_login": "العودة إلى تسجيل الدخول",
+    "enter_email_address_associated_with_your_account": "أدخل عنوان البريد الإلكتروني المرتبط بحسابك",
+    "and_we_will_send_otp_code_to_reset_your_password": "وسنرسل لك رمز اعاده التعيين",
+    "verify_your_account": "تحقق من حسابك",
+    "we_sent_a_verification_code_to": "أرسلنا رمز التحقق إلى",
+    "please_check_your_email_and_paste_the_code_below": "يرجى التحقق من بريدك الإلكتروني ولصق الرمز أدناه",
+    "did_not_receive_the_code?": "لم تتلق الرمز؟",
+    "resend": "إعادة إرسال"
   },
   "layout": {
     "home": "الرئيسيه",
@@ -46,10 +62,15 @@
   },
   "btn": {
     "login": "تسجيل الدخول",
-    "google": "جوجل"
+    "google": "جوجل",
+    "sign_up": "اشتراك",
+    "continue": "يكمل",
+    "verify": "يؤكد"
   },
   "form_validation": {
     "must_be_a_valid_email": "يجب أن يكون بريدًا إلكترونيًا صالحًا",
-    "password_must_be_at_least_7_characters": "يجب أن تتكون كلمة المرور من 7 أحرف على الأقل"
+    "password_must_be_at_least_7_characters": "يجب أن تتكون كلمة المرور من 7 أحرف على الأقل",
+    "first_name_must_be_at_least_2_characters": "يجب أن يتكون الاسم الأول من حرفين على الأقل",
+    "last_name_must_be_at_least_2_characters": "يجب أن يتكون الاسم الأخير من حرفين على الأقل"
   }
 }

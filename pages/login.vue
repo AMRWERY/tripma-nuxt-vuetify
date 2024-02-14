@@ -61,18 +61,21 @@
   
 <script setup>
 import { useAuthStore } from '@/stores/authStore'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const emailRules = [
     value => {
         if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
-        return 'Must be a valid e-mail.'
+        return t('form_validation.must_be_a_valid_email')
     },
 ]
 
 const passwordRules = [
     value => {
         if (value?.length >= 7) return true
-        return 'Password must be at least 7 characters'
+        return t('form_validation.password_must_be_at_least_7_characters')
     },
 ]
 
