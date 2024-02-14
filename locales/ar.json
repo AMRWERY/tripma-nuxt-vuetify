@@ -1,4 +1,17 @@
 {
+  "auth": {
+    "login_into_your_account": "تسجيل الدخول إلى حسابك",
+    "login_into_your_account_so_you_can_continue_check": "قم بتسجيل الدخول إلى حسابك حتى تتمكن من متابعة التحقق",
+    "our_services": "خدماتنا",
+    "email": "بريد إلكتروني",
+    "password": "كلمة المرور",
+    "forget_password": "نسيت كلمة المرور",
+    "or_login_using": "أو تسجيل الدخول باستخدام",
+    "do_not_have_an_account_yet?": "لا تملك حسابا حتى الآن؟",
+    "let_is_get_you_all_set_up_so_you_can_start_creating_your_first": "دعنا نجهزك جميعًا حتى تتمكن من البدء في إنشاء موقعك الأول",
+    "onboarding_experience": "تجربة الإعداد",
+    "sign_up": "اشتراك"
+  },
   "layout": {
     "home": "الرئيسيه",
     "our_service": "خدمتنا",
@@ -30,5 +43,13 @@
     "hotel_reservation": "حجز الفندق",
     "tripma_applications": "تطبيقات تريبما",
     "you_can_now_enjoy_the_services_of_the_tripma_easily_through_mobile_applications_for_the_tripma_on_the_google_store_and_the_apple_store": "يمكنك الآن الاستمتاع بخدمات تريبما بسهولة من خلال تطبيقات الهاتف المحمول الخاصة بـ تريبما على جوجل ستور و ابل ستور"
+  },
+  "btn": {
+    "login": "تسجيل الدخول",
+    "google": "جوجل"
+  },
+  "form_validation": {
+    "must_be_a_valid_email": "يجب أن يكون بريدًا إلكترونيًا صالحًا",
+    "password_must_be_at_least_7_characters": "يجب أن تتكون كلمة المرور من 7 أحرف على الأقل"
   }
 }

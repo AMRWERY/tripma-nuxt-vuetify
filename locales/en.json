@@ -1,4 +1,17 @@
 {
+  "auth": {
+    "login_into_your_account": "Login into Your Account",
+    "login_into_your_account_so_you_can_continue_check": "Log into your account so you can continue check",
+    "our_services": "our services",
+    "email": "Email",
+    "password": "Password",
+    "forget_password": "Forget password",
+    "or_login_using": "Or Log in using",
+    "do_not_have_an_account_yet?": "Don't Have an Account Yet?",
+    "let_is_get_you_all_set_up_so_you_can_start_creating_your_first": "Let's get you all set up so you can start creating your your first",
+    "onboarding_experience": "onboarding experience",
+    "sign_up": "Sign Up"
+  },
   "layout": {
     "home": "Home",
     "our_service": "Our Service",
@@ -30,5 +43,13 @@
     "hotel_reservation": "Hotel Reservation",
     "tripma_applications": "Tripma Applications",
     "you_can_now_enjoy_the_services_of_the_tripma_easily_through_mobile_applications_for_the_tripma_on_the_google_store_and_the_apple_store": "You can now enjoy the services of the Tripma easily through mobile applications for the Tripma on the Google Store and the Apple Store"
+  },
+  "btn": {
+    "login": "Login",
+    "google": "Google"
+  },
+  "form_validation": {
+    "must_be_a_valid_email": "Must be a valid email",
+    "password_must_be_at_least_7_characters": "Password must be at least 7 characters"
   }
 }

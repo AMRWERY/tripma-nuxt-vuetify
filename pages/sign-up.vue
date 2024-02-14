@@ -138,14 +138,6 @@ const validateFields = () => {
 </script>
 
 <style scoped>
-.v-application .rounded-bl-xl {
-    border-bottom-left-radius: 300px !important;
-}
-
-.v-application .rounded-br-xl {
-    border-bottom-right-radius: 300px !important;
-}
-
 .card-text {
     text-align: center;
 }
