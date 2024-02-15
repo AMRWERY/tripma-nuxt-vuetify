@@ -24,9 +24,9 @@
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.change_language') }}</v-tooltip>
                     <v-icon icon="mdi-google-translate" />
                 </v-btn>
-                <v-btn variant="elevated" color="indigo" rounded="lg" size="large" class="text-capitalize mx-1"
-                    to="/login">Login</v-btn>
-                <v-btn variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex" @click="logout">
+                <v-btn v-if="!isAuthenticated" variant="elevated" color="indigo" rounded="lg" size="large"
+                    class="text-capitalize mx-1" to="/login">Login</v-btn>
+                <v-btn v-else variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex" @click="logout">
                     <v-tooltip activator="parent" location="bottom">Logout</v-tooltip>
                     <v-icon icon="mdi-logout" size="large" />
                 </v-btn>
@@ -40,7 +40,8 @@
                 </v-list>
                 <template v-slot:append>
                     <div class="pa-2">
-                        <v-btn block color="indigo" rounded="lg" size="large" class="text-capitalize" @click="logout">
+                        <v-btn v-if="isAuthenticated" block color="indigo" rounded="lg" size="large" class="text-capitalize"
+                            @click="logout">
                             Logout
                         </v-btn>
                     </div>
@@ -116,6 +117,14 @@ const drawerLocation = computed(() => determineDrawerLocation());
 
 const isRTL = computed(() => $i18n.locale.value === 'ar');
 
+const isAuthenticated = computed(() => {
+    if (typeof sessionStorage !== 'undefined') {
+        return sessionStorage.getItem('isAuthenticated') === 'true';
+    } else {
+        return false;
+    }
+});
+
 watch(currentLang, (newLang) => {
     if (typeof sessionStorage !== 'undefined') {
         sessionStorage.setItem("currentLang", newLang);
@@ -126,6 +135,9 @@ watch(currentLang, (newLang) => {
 const logout = () => {
     try {
         store.logout();
+        setTimeout(() => {
+            location.reload();
+        }, 500);
     } catch (error) {
         console.log(error);
     }

@@ -67,10 +67,10 @@ const { t } = useI18n()
 
 const emailRules = [
     value => {
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
-        return t('form_validation.must_be_a_valid_email')
+        if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(value)) return true;
+        return t('form_validation.must_be_a_valid_email');
     },
-]
+];
 
 const passwordRules = [
     value => {

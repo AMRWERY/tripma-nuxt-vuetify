@@ -9,11 +9,15 @@
                             {{ $t('auth.and_we_will_send_otp_code_to_reset_your_password') }}</p>
                         <v-row align="center" justify="center">
                             <v-col cols="12" sm="8">
-                                <v-form class="my-6">
+                                <v-form class="my-6" @submit.prevent="resetPassword">
                                     <v-text-field :label="$t('auth.email')" variant="outlined" density="compact"
                                         color="blue" v-model="email" :rules="emailRules" />
-                                    <v-btn type="submit" color="indigo" block class="text-capitalize"
-                                        to="/forget-password/otp">{{ $t('btn.continue') }}</v-btn>
+                                    <v-btn type="submit" color="indigo" block class="text-capitalize">{{ $t('btn.continue')
+                                    }}</v-btn>
+                                    <div class="text-center mt-4">
+                                        <nuxt-link class="text-capitalize text-blue" to="/login">{{
+                                            $t('auth.back_to_login') }}</nuxt-link>
+                                    </div>
                                 </v-form>
                             </v-col>
                         </v-row>
@@ -25,16 +29,28 @@
 </template>
 
 <script setup>
+import { useAuthStore } from '@/stores/authStore'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
+const email = ref('')
+const store = useAuthStore()
+
 const emailRules = [
     value => {
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
-        return t('form_validation.must_be_a_valid_email')
+        if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(value)) return true;
+        return t('form_validation.must_be_a_valid_email');
     },
-]
+];
+
+const resetPassword = () => {
+    if (!validateFields()) return;
+    store.resetUserPassword({
+        email: email.value,
+    });
+};
+
 
 const validateFields = () => {
     const validations = [

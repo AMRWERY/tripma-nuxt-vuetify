@@ -19,6 +19,7 @@ import {
   getDocs,
   addDoc,
   getDoc,
+  updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "@/firebase/config";
 
@@ -83,9 +84,13 @@ export const useAuthStore = defineStore("auth", {
           const user = userCredential.user;
           if (user) {
             this.isAuthenticated = true;
+            sessionStorage.setItem("isAuthenticated", true);
             sessionStorage.setItem("password", password);
             sessionStorage.setItem("email", email);
             router.replace("/");
+            setTimeout(() => {
+              location.reload();
+            }, 500);
             try {
               const usersCollection = collection(db, "users");
               const q = query(
@@ -111,7 +116,7 @@ export const useAuthStore = defineStore("auth", {
                 console.log(error);
               });
           } else {
-            router.replace("/auth");
+            router.replace("/sign-up");
           }
         })
         .catch((error) => {
@@ -131,15 +136,14 @@ export const useAuthStore = defineStore("auth", {
         });
     },
 
-    //don't delete it 😅
-    // async resetUserPassword(payload) {
-    //   const { email } = payload;
-    //   try {
-    //     await sendPasswordResetEmail(auth, email);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // },
+    async resetUserPassword(payload) {
+      const { email } = payload;
+      try {
+        await sendPasswordResetEmail(auth, email);
+      } catch (error) {
+        console.log(error);
+      }
+    },
 
     //sign up & sign in with google
     signUpWithGoogle() {
