@@ -11,15 +11,10 @@
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.profile') }}</v-tooltip>
                     <v-icon icon="mdi-account" size="large" />
                 </v-btn>
-                <!-- <v-btn variant="text" icon>
-                    <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.dashboard') }}</v-tooltip>
-                    <v-icon icon="mdi-monitor-dashboard" size="large" />
-                </v-btn> -->
-                <v-btn v-if="isAuthenticated && userEmail === 'amrmounir2@gmail.com'" variant="text" icon>
+                <v-btn v-if="isAuthenticated && userEmail === 'amrmounir2@gmail.com'" variant="text" icon to="/dashboard">
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.dashboard') }}</v-tooltip>
                     <v-icon icon="mdi-monitor-dashboard" size="large" />
                 </v-btn>
-
                 <!-- <v-btn variant="text" icon @click="toggleTheme">
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.change_theme') }}</v-tooltip>
                     <v-icon
@@ -47,7 +42,7 @@
                     <div class="pa-2">
                         <v-btn v-if="isAuthenticated" block color="indigo" rounded="lg" size="large" class="text-capitalize"
                             @click="logout">
-                            Logout
+                            {{ $t('btn.logout') }}
                         </v-btn>
                     </div>
                 </template>
@@ -137,14 +132,6 @@ const userEmail = computed(() => {
         return null;
     }
 });
-
-// const isAuthenticated = computed(() => {
-//     if (typeof sessionStorage !== 'undefined') {
-//         return sessionStorage.getItem('isAuthenticated') === 'true';
-//     } else {
-//         return false;
-//     }
-// });
 
 watch(currentLang, (newLang) => {
     if (typeof sessionStorage !== 'undefined') {

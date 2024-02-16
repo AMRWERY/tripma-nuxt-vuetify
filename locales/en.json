@@ -33,13 +33,21 @@
     "our_service": "Our Service",
     "programs": "Programs",
     "about_us": "About Us",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+    "dashboard": "Dashboard",
+    "flights": "Flights",
+    "hotels": "Hotels",
+    "wallet": "Wallet",
+    "reports": "Reports",
+    "statistics": "statistics",
+    "settings": "Settings"
   },
   "tooltip": {
     "profile": "Profile",
     "dashboard": "Dashboard",
     "change_theme": "Change Theme",
-    "change_language": "Change Language"
+    "change_language": "Change Language",
+    "back_to_home": "Back to Home"
   },
   "home": {
     "find_your_reservation": "Find Your Reservation",
@@ -65,7 +73,7 @@
     "google": "Google",
     "sign_up": "Sign up",
     "continue": "Continue",
-    "verify": "Verify"
+    "logout": "logout"
   },
   "form_validation": {
     "must_be_a_valid_email": "Must be a valid email",

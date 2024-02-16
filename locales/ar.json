@@ -33,13 +33,21 @@
     "our_service": "خدمتنا",
     "programs": "البرامج",
     "about_us": "معلومات عنا",
-    "contact_us": "اتصل بنا"
+    "contact_us": "اتصل بنا",
+    "dashboard": "لوحة القيادة",
+    "flights": "الرحلات الجوية",
+    "hotels": "الفنادق",
+    "wallet": "المحفظة",
+    "reports": "التقارير",
+    "statistics": "إحصائيات",
+    "settings": "الإعدادات"
   },
   "tooltip": {
     "profile": "حساب تعريفي",
     "dashboard": "لوحة القيادة",
     "change_theme": "تغيير الخلفية",
-    "change_language": "تغيير اللغة"
+    "change_language": "تغيير اللغة",
+    "back_to_home": "العوده الي الرئيسيه"
   },
   "home": {
     "find_your_reservation": "ابحث عن الحجز الخاص بك",
@@ -65,7 +73,7 @@
     "google": "جوجل",
     "sign_up": "اشتراك",
     "continue": "يكمل",
-    "verify": "يؤكد"
+    "logout": "تسجيل خروج"
   },
   "form_validation": {
     "must_be_a_valid_email": "يجب أن يكون بريدًا إلكترونيًا صالحًا",

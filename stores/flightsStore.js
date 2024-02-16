@@ -1,26 +1,32 @@
 import { defineStore } from "pinia";
-import { getDocs, collection, query } from "firebase/firestore";
+import { getDocs, collection, addDoc, query } from "firebase/firestore";
 import { db } from "@/firebase/config";
 
-export const useFlightsPackage = defineStore("flightsPackage", {
+export const useFlightsPackage = defineStore("flights-Package", {
   state: () => {
     return {
-      places: [],
+      flights: [],
     };
   },
 
   actions: {
-    async fetchPlaces() {
+    async fetchFlights() {
       const querySnap = await getDocs(query(collection(db, "flights")));
-      let product = [];
+      let flight = [];
       querySnap.forEach((doc) => {
         let pro = {
           id: doc.id,
           ...doc.data(),
         };
-        product.push(pro);
+        flight.push(pro);
       });
-      this.places = product;
+      this.flights = flight;
+    },
+
+    async addNewFlight(data) {
+      const colRef = collection(db, "flights");
+      const docRef = await addDoc(colRef, data);
+      console.log("Document was created with ID:", docRef.id);
     },
   },
 });
