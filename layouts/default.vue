@@ -25,7 +25,7 @@
                     <v-icon icon="mdi-google-translate" />
                 </v-btn>
                 <v-btn v-if="!isAuthenticated" variant="elevated" color="indigo" rounded="lg" size="large"
-                    class="text-capitalize mx-1" to="/login">Login</v-btn>
+                    class="text-capitalize mx-1" to="/login">{{ $t('btn.login') }}</v-btn>
                 <v-btn v-else variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex" @click="logout">
                     <v-tooltip activator="parent" location="bottom">Logout</v-tooltip>
                     <v-icon icon="mdi-logout" size="large" />
@@ -70,7 +70,7 @@ const { t } = useI18n();
 const links = reactive([
     { title: 'layout.home', route: '/' },
     { title: 'layout.our_service', route: '/our-service' },
-    { title: 'layout.programs', route: '/programs' },
+    // { title: 'layout.programs', route: '/programs' },
     { title: 'layout.about_us', route: '' },
     { title: 'layout.contact_us', route: '' },
 ]);

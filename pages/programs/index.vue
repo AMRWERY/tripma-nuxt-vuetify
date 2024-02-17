@@ -5,15 +5,15 @@
             <v-col cols="12" md="4" v-for="offer in store.filteredPlacesArray" :key="offer">
                 <v-card class="mx-auto card" max-width="350" flat :to="'/programs/' + offer.id">
                     <div class="image-container">
-                        <v-img :src="offer.img" height="320px" cover />
+                        <v-img :src="offer.cover" height="320px" cover />
                     </div>
                     <v-card-text>
                         <div class="d-flex">
-                            <p class="text-h6 text-blue-darken-3 font-weight-bold">{{ offer.title }}</p>
+                            <p class="text-h6 text-blue-darken-3 font-weight-bold">{{ offer.smallTitle }}</p>
                             <span class="text-h6 ml-auto font-weight-medium">${{ offer.price }}</span>
                         </div>
                         <div class="d-flex my-2">
-                            <p class="text-subtitle-1">{{ offer.subtitle }}</p>
+                            <p class="text-subtitle-1">{{ offer.hotel }}</p>
                             <span class="ml-auto mt-1 text-subtitle-2">{{ offer.duration }}</span>
                         </div>
                         <ratings />
