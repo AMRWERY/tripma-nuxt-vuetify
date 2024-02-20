@@ -11,7 +11,7 @@
                             <v-col cols="12" sm="8">
                                 <v-form class="my-6" @submit.prevent="resetPassword">
                                     <v-text-field :label="$t('auth.email')" variant="outlined" density="compact"
-                                        color="blue" v-model="email" :rules="emailRules" />
+                                        color="blue" v-model="email" :rules="emailRules" prepend-inner-icon="mdi-at" />
                                     <v-btn type="submit" color="indigo" block class="text-capitalize">{{ $t('btn.continue')
                                     }}</v-btn>
                                     <div class="text-center mt-4">

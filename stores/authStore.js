@@ -187,7 +187,7 @@ export const useAuthStore = defineStore("auth", {
   },
 
   getters: {
-    getUsername: (state) => state.username,
+    getUsername: (state) => state.firstName,
     getUserEmail: (state) => state.email,
   },
 });

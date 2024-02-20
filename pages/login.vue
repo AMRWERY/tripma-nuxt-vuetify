@@ -14,13 +14,16 @@
                                     <v-col cols="12" sm="8">
                                         <v-form @submit.prevent="signIn">
                                             <v-text-field :label="$t('auth.email')" variant="outlined" density="compact"
-                                                color="blue" v-model="email" :rules="emailRules" />
+                                                color="blue" v-model="email" :rules="emailRules"
+                                                prepend-inner-icon="mdi-at" />
                                             <div class="text-right">
                                                 <nuxt-link class="text-caption text-blue text-decoration-none"
                                                     to="/forget-password">{{ $t('auth.forget_password') }}</nuxt-link>
                                             </div>
                                             <v-text-field :label="$t('auth.password')" variant="outlined" density="compact"
-                                                color="blue" type="password" v-model="password" :rules="passwordRules" />
+                                                color="blue" :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show ? 'text' : 'password'" @click:append-inner="show = !show"
+                                                v-model="password" :rules="passwordRules" prepend-inner-icon="mdi-lock" />
                                             <v-btn type="submit" color="indigo" block class="text-capitalize">{{
                                                 $t('btn.login') }}</v-btn>
                                         </v-form>
@@ -64,6 +67,7 @@ import { useAuthStore } from '@/stores/authStore'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+const show = ref(false)
 
 const emailRules = [
     value => {

@@ -21,18 +21,19 @@
                                                 <v-col cols="12" sm="6">
                                                     <v-text-field :label="$t('auth.first_name')" variant="outlined"
                                                         density="compact" color="blue" class="mt-4" v-model="firstName"
-                                                        :rules="firstNameRules" />
+                                                        :rules="firstNameRules" prepend-inner-icon="mdi-rename" />
                                                 </v-col>
                                                 <v-col cols="12" sm="6">
                                                     <v-text-field :label="$t('auth.last_name')" variant="outlined"
                                                         density="compact" color="blue" class="mt-4" v-model="lastName"
-                                                        :rules="lastNameRules" />
+                                                        :rules="lastNameRules" prepend-inner-icon="mdi-rename" />
                                                 </v-col>
                                             </v-row>
                                             <v-text-field :label="$t('auth.email')" variant="outlined" density="compact"
-                                                color="blue" v-model="email" :rules="emailRules" />
+                                                color="blue" v-model="email" :rules="emailRules" prepend-inner-icon="mdi-at" />
                                             <v-text-field :label="$t('auth.password')" variant="outlined" density="compact"
-                                                color="blue" type="password" v-model="password" :rules="passwordRules" />
+                                                color="blue" v-model="password" :rules="passwordRules" :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show ? 'text' : 'password'" @click:append-inner="show = !show" prepend-inner-icon="mdi-lock" />
                                             <v-btn type="submit" color="indigo" block class="text-capitalize">{{
                                                 $t('auth.sign_up') }}</v-btn>
                                         </v-form>
@@ -71,6 +72,7 @@ import { useAuthStore } from '@/stores/authStore'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+const show = ref(false)
 
 const firstNameRules = [
     value => {
