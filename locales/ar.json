@@ -80,5 +80,8 @@
     "password_must_be_at_least_7_characters": "يجب أن تتكون كلمة المرور من 7 أحرف على الأقل",
     "first_name_must_be_at_least_2_characters": "يجب أن يتكون الاسم الأول من حرفين على الأقل",
     "last_name_must_be_at_least_2_characters": "يجب أن يتكون الاسم الأخير من حرفين على الأقل"
+  },
+  "alert": {
+    "welcome": "!مرحبا، {name}"
   }
 }

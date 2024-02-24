@@ -80,5 +80,8 @@
     "password_must_be_at_least_7_characters": "Password must be at least 7 characters",
     "first_name_must_be_at_least_2_characters": "First name must be at least 2 characters",
     "last_name_must_be_at_least_2_characters": "Last name must be at least 2 characters"
+  },
+  "alert": {
+    "welcome": "Welcome, {name}!"
   }
 }

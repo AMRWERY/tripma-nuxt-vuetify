@@ -169,10 +169,10 @@ export const useAuthStore = defineStore("auth", {
         });
         addDoc(collection(db, "users"), userData);
         // console.log(user);
-       if(user) {
-        this.isAuthenticated = true;
-        sessionStorage.setItem("isAuthenticated", true);
-       }
+        if (user) {
+          this.isAuthenticated = true;
+          sessionStorage.setItem("isAuthenticated", true);
+        }
         setTimeout(() => {
           location.reload();
         }, 500);
@@ -185,10 +185,10 @@ export const useAuthStore = defineStore("auth", {
       const provider = new GoogleAuthProvider();
       signInWithPopup(getAuth(), provider).then((result) => {
         const user = result.user;
-        if(user) {
+        if (user) {
           this.isAuthenticated = true;
           sessionStorage.setItem("isAuthenticated", true);
-         }
+        }
         const userData = {
           username: user.displayName,
           email: user.email,
@@ -209,6 +209,7 @@ export const useAuthStore = defineStore("auth", {
 
   getters: {
     getUsername: (state) => state.firstName,
+    getGoogleUsername: (state) => state.username,
     getUserEmail: (state) => state.email,
   },
 });
