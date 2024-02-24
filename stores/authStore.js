@@ -44,15 +44,21 @@ export const useAuthStore = defineStore("auth", {
         .then(async (userCredential) => {
           const user = userCredential.user;
           if (user) {
+            this.isAuthenticated = true;
+            sessionStorage.setItem("isAuthenticated", true);
             sessionStorage.setItem("password", password);
             sessionStorage.setItem("firstName", firstName);
             sessionStorage.setItem("lastName", lastName);
             sessionStorage.setItem("email", email);
             router.replace("/");
+            setTimeout(() => {
+              location.reload();
+            }, 500);
             try {
               await updateProfile(user, {
                 displayName: payload.displayName,
               });
+              this.firstName = payload.firstName;
               const token = await getIdToken(user);
               sessionStorage.setItem("userToken", token);
               sessionStorage.setItem("userId", user.uid);
@@ -100,6 +106,8 @@ export const useAuthStore = defineStore("auth", {
               const querySnapshot = await getDocs(q);
               if (!querySnapshot.empty) {
                 const userData = querySnapshot.docs[0].data();
+                this.firstName = userData.firstName;
+                sessionStorage.setItem("firstName", userData.firstName);
                 sessionStorage.setItem("username", userData.username);
                 sessionStorage.setItem("userId", user.uid);
               } else {
@@ -160,7 +168,14 @@ export const useAuthStore = defineStore("auth", {
           sessionStorage.setItem(`${key}`, value);
         });
         addDoc(collection(db, "users"), userData);
-        console.log(user);
+        // console.log(user);
+       if(user) {
+        this.isAuthenticated = true;
+        sessionStorage.setItem("isAuthenticated", true);
+       }
+        setTimeout(() => {
+          location.reload();
+        }, 500);
         router.replace("/");
       });
     },
@@ -170,7 +185,10 @@ export const useAuthStore = defineStore("auth", {
       const provider = new GoogleAuthProvider();
       signInWithPopup(getAuth(), provider).then((result) => {
         const user = result.user;
-        this.isAuthenticated = true;
+        if(user) {
+          this.isAuthenticated = true;
+          sessionStorage.setItem("isAuthenticated", true);
+         }
         const userData = {
           username: user.displayName,
           email: user.email,
@@ -180,6 +198,9 @@ export const useAuthStore = defineStore("auth", {
           sessionStorage.setItem(`${key}`, value);
         });
         getDocs(collection(db, "users"), userData);
+        setTimeout(() => {
+          location.reload();
+        }, 500);
         console.log(user);
         router.replace("/");
       });

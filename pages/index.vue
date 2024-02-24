@@ -15,5 +15,5 @@ import { useAuthStore } from '@/stores/authStore'
 const store = useAuthStore()
 
 const welcomeMessage = computed(() => `Welcome, ${store.getUsername}`);
-console.log(welcomeMessage)
+console.log(store.getUsername)
 </script>

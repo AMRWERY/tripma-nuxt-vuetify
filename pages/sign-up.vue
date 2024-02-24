@@ -30,10 +30,13 @@
                                                 </v-col>
                                             </v-row>
                                             <v-text-field :label="$t('auth.email')" variant="outlined" density="compact"
-                                                color="blue" v-model="email" :rules="emailRules" prepend-inner-icon="mdi-at" />
+                                                color="blue" v-model="email" :rules="emailRules"
+                                                prepend-inner-icon="mdi-at" />
                                             <v-text-field :label="$t('auth.password')" variant="outlined" density="compact"
-                                                color="blue" v-model="password" :rules="passwordRules" :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                                                :type="show ? 'text' : 'password'" @click:append-inner="show = !show" prepend-inner-icon="mdi-lock" />
+                                                color="blue" v-model="password" :rules="passwordRules"
+                                                :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                                :type="show ? 'text' : 'password'" @click:append-inner="show = !show"
+                                                prepend-inner-icon="mdi-lock" />
                                             <v-btn type="submit" color="indigo" block class="text-capitalize">{{
                                                 $t('auth.sign_up') }}</v-btn>
                                         </v-form>
@@ -121,8 +124,7 @@ const signUp = async () => {
 
 const signUpWithGoogleAccount = () => {
     store.signUpWithGoogle({
-        email: email.value,
-        username: username.value
+        email: email.value
     });
 };
 
@@ -146,5 +148,4 @@ const validateFields = () => {
 <style scoped>
 .card-text {
     text-align: center;
-}
-</style>
+}</style>

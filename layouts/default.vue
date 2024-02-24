@@ -113,9 +113,9 @@ const determineDrawerLocation = () => {
 
 const currentLang = computed(() => $i18n.locale.value);
 
-const drawerLocation = computed(() => determineDrawerLocation());
-
 const isRTL = computed(() => $i18n.locale.value === 'ar');
+
+const drawerLocation = computed(() => determineDrawerLocation());
 
 const isAuthenticated = computed(() => {
     if (typeof sessionStorage !== 'undefined') {
