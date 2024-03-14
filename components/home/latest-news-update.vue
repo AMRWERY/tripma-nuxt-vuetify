@@ -3,7 +3,7 @@
         <v-row align="center" justify="center" dense>
             <v-col class="text-center">
                 <p class="text-subtitle-1 text-indigo font-weight-medium">Our News Feeds</p>
-                <p class="text-h4 font-weight-medium">Latest News Update</p>
+                <p class="text-h4 font-weight-bold">Latest News Update</p>
             </v-col>
         </v-row>
         <v-row>

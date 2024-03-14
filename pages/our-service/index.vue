@@ -58,7 +58,7 @@
   
 <script setup>
 const cards = ref([
-    { title: 'our_service.flight_reservation', desc: 'You no longer have to worry about your flight booking, you now have a whole team tasked with fulfilling your request in this regard and making sure that everything is ready for your convenience.', img: 'https://justfields.com/storage/projects/7M5rV059/flights.png', route: '' },
+    { title: 'our_service.flight_reservation', desc: 'You no longer have to worry about your flight booking, you now have a whole team tasked with fulfilling your request in this regard and making sure that everything is ready for your convenience.', img: 'https://justfields.com/storage/projects/7M5rV059/flights.png', route: '/flight-reservation' },
     { title: 'layout.programs', desc: 'You can choose what suits you from our integrated programs and provide everything you need during your trip, starting from flight reservations, hotel reservations, car rental and all the services you may need during your trip.', img: 'https://justfields.com/storage/projects/7M5rV059/programs.png', route: '/programs' },
     { title: 'our_service.hotel_reservation', desc: 'We are in Seasons Tour. We do not care about anything but your comfort , so we were keen to search for the best hotels with the best offers to make sure that you will get what you deserve from the comfort, privacy and fun during your trip.', img: 'https://justfields.com/storage/projects/7M5rV059/hotels.png', route: '' },
     { title: 'home.car_rentals', desc: 'Car rental service to provide you with comfort, privacy and save time during internal transfers throughout your stay.', img: 'https://justfields.com/storage/projects/7M5rV059/cars.png', route: '' },

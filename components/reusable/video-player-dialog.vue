@@ -13,7 +13,7 @@
         </v-card>
     </v-dialog>
 </template>
-  
+
 <script setup>
 import { useOfferDealsStore } from '@/stores/offerDealsStore'
 

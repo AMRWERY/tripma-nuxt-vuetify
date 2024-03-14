@@ -3,19 +3,21 @@
         <v-row align="center" justify="center" dense>
             <v-col class="text-center">
                 <p class="text-subtitle-1 text-indigo font-weight-medium">{{ $t('home.fly_next_package') }}</p>
-                <p class="text-h4 font-weight-medium">{{ $t('home.your_great_destination') }}</p>
+                <p class="text-h4 font-weight-bold">{{ $t('home.your_great_destination') }}</p>
             </v-col>
         </v-row>
         <v-row>
             <v-col>
                 <v-card flat>
                     <v-tabs v-model="tab" color="deep-purple-accent-4" align-tabs="start">
-                        <v-tab :value="1" class="text-capitalize text-h6" append-icon="mdi-airplane">{{ $t('home.flights')
-                        }}</v-tab>
-                        <v-tab :value="2" class="text-capitalize text-h6" append-icon="mdi-taxi">{{ $t('home.car_rentals')
-                        }}</v-tab>
+                        <v-tab :value="1" class="text-capitalize text-h6" append-icon="mdi-airplane">{{
+                    $t('home.flights')
+                }}</v-tab>
+                        <v-tab :value="2" class="text-capitalize text-h6" append-icon="mdi-taxi">{{
+                    $t('home.car_rentals')
+                }}</v-tab>
                         <v-tab :value="3" class="text-capitalize text-h6" append-icon="mdi-office-building">{{
-                            $t('home.hotels') }}</v-tab>
+                    $t('home.hotels') }}</v-tab>
                     </v-tabs>
                     <v-window v-model="tab">
                         <v-window-item v-for="n in 3" :key="n" :value="1" transition="slide-x-transition">

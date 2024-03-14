@@ -6,6 +6,8 @@ import * as directives from "vuetify/directives";
 import * as labsComponents from "vuetify/labs/components";
 import { createI18n } from "vue-i18n";
 import { en, ar } from "vuetify/locale";
+// import { VuetifyDateAdapter } from "vuetify/date/adapters/vuetify";
+import { VuetifyDateAdapter } from "../node_modules/vuetify/lib/composables/date/adapters/vuetify.mjs";
 
 const messages = {
   en: {
@@ -43,6 +45,9 @@ export default defineNuxtPlugin((app) => {
       ...labsComponents,
     },
     directives,
+    date: {
+      adapter: VuetifyDateAdapter,
+    },
   });
   app.vueApp.use(vuetify);
 });

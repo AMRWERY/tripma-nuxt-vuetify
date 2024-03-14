@@ -25,7 +25,7 @@
                     <v-icon icon="mdi-google-translate" />
                 </v-btn>
                 <v-btn v-if="!isAuthenticated" variant="elevated" color="indigo" rounded="lg" size="large"
-                    class="text-capitalize mx-1" to="/login">{{ $t('btn.login') }}</v-btn>
+                    class="mx-1 text-capitalize" to="/login">{{ $t('btn.login') }}</v-btn>
                 <v-btn v-else variant="text" icon class="d-none d-sm-none d-md-flex d-lg-flex" @click="logout">
                     <v-tooltip activator="parent" location="bottom">Logout</v-tooltip>
                     <v-icon icon="mdi-logout" size="large" />
