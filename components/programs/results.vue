@@ -5,7 +5,7 @@
                 class="select" v-model="selectedFilter" @change="filterPlaces()" />
         </v-col>
         <v-col cols="6">
-            <p class="text-right text-h6">Result: {{ store.filteredPlacesArray.length }}</p>
+            <p class="text-end text-h6">Result: {{ store.filteredPlacesArray.length }}</p>
         </v-col>
     </v-row>
 </template>

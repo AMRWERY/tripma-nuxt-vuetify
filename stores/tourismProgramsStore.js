@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { getDocs, collection, query, getDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 
-export const useProgrammesCards = defineStore("programmes-store", {
+export const useTourismProgrammesCards = defineStore("tourism-programmes-store", {
   state: () => {
     return {
       places: [],
