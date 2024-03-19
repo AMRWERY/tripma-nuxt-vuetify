@@ -13,7 +13,7 @@
       <v-sheet class="mx-auto" max-width="1400">
         <v-slide-group v-model="model" class="pa-4" show-arrows>
           <v-slide-group-item v-for="offer in store.places" :key="offer">
-            <v-card class="mx-auto me-4 my-4 card" max-width="350" flat :to="'/programs/' + offer.id">
+            <v-card class="mx-auto me-4 my-4 card" max-width="350" flat :to="'/programs/best-programmes/' + offer.id">
               <div class="image-container">
                 <v-img :src="offer.cover" height="320px" cover />
               </div>
