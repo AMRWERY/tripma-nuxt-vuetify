@@ -29,9 +29,9 @@
 </template>
 
 <script setup>
-import { useProgrammesCards } from '@/stores/programStore'
+import { useTourismProgrammesStore } from '@/stores/tourismProgramsStore'
 
-const store = useProgrammesCards()
+const store = useTourismProgrammesStore()
 
 onMounted(() => {
     store.fetchPlaces()

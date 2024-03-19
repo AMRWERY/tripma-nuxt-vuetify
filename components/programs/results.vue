@@ -9,11 +9,11 @@
         </v-col>
     </v-row>
 </template>
-  
-<script setup>
-import { useProgrammesCards } from '@/stores/programStore';
 
-const store = useProgrammesCards();
+<script setup>
+import { useTourismProgrammesStore } from '@/stores/tourismProgramsStore';
+
+const store = useTourismProgrammesStore();
 const selectedFilter = ref("Show All");
 
 const filterPlaces = () => {
@@ -24,7 +24,7 @@ watch(selectedFilter, (newValue) => {
     store.filteredPlaces(newValue);
 });
 </script>
-  
+
 <style scoped>
 .select {
     width: 200px;

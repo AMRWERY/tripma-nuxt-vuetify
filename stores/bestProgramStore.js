@@ -2,11 +2,10 @@ import { defineStore } from "pinia";
 import { getDocs, collection, query, getDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 
-export const useProgrammesCards = defineStore("programmes-store", {
+export const useBestProgrammesStore = defineStore("best-programmes-store", {
   state: () => {
     return {
       places: [],
-      filteredPlacesArray: [],
       selectedProgram: null,
     };
   },
@@ -23,17 +22,6 @@ export const useProgrammesCards = defineStore("programmes-store", {
         placesArray.push(pro);
       });
       this.places = placesArray;
-      this.filteredPlacesArray = this.places;
-    },
-
-    filteredPlaces(selectedFilter) {
-      if (selectedFilter === "Show All") {
-        return (this.filteredPlacesArray = this.places);
-      } else {
-        return (this.filteredPlacesArray = this.places.filter(
-          (offer) => offer.car === selectedFilter
-        ));
-      }
     },
 
     async getProgramById(id) {

@@ -38,9 +38,9 @@
 </template>
 
 <script setup>
-import { useTourismProgrammesCards } from '@/stores/tourismProgramsStore'
+import { useBestProgrammesStore } from '@/stores/bestProgramStore'
 
-const store = useTourismProgrammesCards()
+const store = useBestProgrammesStore()
 
 onMounted(() => {
   store.fetchPlaces()

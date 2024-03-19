@@ -273,9 +273,9 @@
 </template>
 
 <script setup>
-import { useProgrammesCards } from '@/stores/programStore'
+import { useTourismProgrammesStore } from '@/stores/tourismProgramsStore'
 
-const store = useProgrammesCards()
+const store = useTourismProgrammesStore()
 const route = useRoute()
 const programId = ref('')
 const programDetails = ref(null);
