@@ -11,7 +11,7 @@
                         <div class="d-flex">
                             <p class="text-h6 text-blue-darken-3 font-weight-bold">{{ offer.smallTitle }}</p>
                             <span class="text-h6 ml-auto font-weight-medium">${{ offer.price }}</span>
-                        </div>
+                        </div>farrivalIn
                         <div class="d-flex my-2">
                             <p class="text-subtitle-1">{{ offer.hotel }}</p>
                             <span class="ml-auto mt-1 text-subtitle-2">{{ offer.duration }}</span>

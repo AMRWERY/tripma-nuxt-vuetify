@@ -1,10 +1,10 @@
 <template>
     <div>
-        <v-alert color="teal-lighten-5" type="success" width="300" elevation="2" closable="mdi-close" v-if="welcomeAlert"
-            :text="welcomeAlert" />
+        <v-alert color="teal-lighten-5" type="success" width="300" elevation="2" closable="mdi-close"
+            v-if="welcomeAlert" :text="welcomeAlert" />
     </div>
 </template>
-    
+
 <script setup>
 const welcomeAlert = ref('');
 import { useI18n } from 'vue-i18n'

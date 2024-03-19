@@ -9,11 +9,11 @@
         </div>
     </v-carousel>
 </template>
-  
+
 <script setup>
 
 </script>
-  
+
 <style scoped>
 .carousel {
     position: relative;

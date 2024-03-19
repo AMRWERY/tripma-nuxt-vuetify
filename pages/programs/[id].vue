@@ -47,7 +47,7 @@
                         <v-col cols="12" md="6">
                             <p class="font-weight-medium">Allowed Weight (KG)</p>
                             <v-card color="#e2e8f0" height="45" class="align-center d-flex card" flat>
-                                <p class="font-weight-bold ml-2">20</p>
+                                <p class="font-weight-bold ml-2">{{ programDetails?.allowedKG }} KG</p>
                             </v-card>
                         </v-col>
                         <v-col cols="12" md="6">
@@ -86,13 +86,13 @@
                         <v-col cols="12" md="6">
                             <p class="font-weight-medium">Departure Time</p>
                             <v-card color="#e2e8f0" height="45" class="align-center d-flex card" flat>
-                                <p class="font-weight-bold ml-2">05:00:00</p>
+                                <p class="font-weight-bold ml-2">{{ programDetails?.departureTime }}</p>
                             </v-card>
                         </v-col>
                         <v-col cols="12" md="6">
                             <p class="font-weight-medium">Arrival Time</p>
                             <v-card color="#e2e8f0" height="45" class="align-center d-flex card" flat>
-                                <p class="font-weight-bold ml-2">11:30:00</p>
+                                <p class="font-weight-bold ml-2">{{ programDetails?.arrivalTime }}</p>
                             </v-card>
                         </v-col>
                     </v-row>
@@ -100,7 +100,7 @@
                         <v-col cols="12" md="6">
                             <p class="font-weight-medium">Allowed Weight (KG)</p>
                             <v-card color="#e2e8f0" height="45" class="align-center d-flex card" flat>
-                                <p class="font-weight-bold ml-2">20</p>
+                                <p class="font-weight-bold ml-2">{{ programDetails?.allowedKG }} KG</p>
                             </v-card>
                         </v-col>
                         <v-col cols="12" md="6">
@@ -137,8 +137,9 @@
                                 <div class="day-count">Day 1</div>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">{{
-                                    programDetails?.dayOne?.title }}</p>
+                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">
+                                    {{
+                        programDetails?.dayOne?.title }}</p>
                             </v-col>
                         </v-row>
                         <v-row dense>
@@ -159,8 +160,9 @@
                                 <div class="day-count">Day 2</div>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">{{
-                                    programDetails?.dayTwo?.title }}</p>
+                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">
+                                    {{
+                        programDetails?.dayTwo?.title }}</p>
                             </v-col>
                         </v-row>
                         <v-row dense>
@@ -181,8 +183,9 @@
                                 <div class="day-count">Day 3</div>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">{{
-                                    programDetails?.dayThree?.title }}</p>
+                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">
+                                    {{
+                        programDetails?.dayThree?.title }}</p>
                             </v-col>
                         </v-row>
                         <v-row dense>
@@ -203,8 +206,9 @@
                                 <div class="day-count">Day 4</div>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">{{
-                                    programDetails?.dayFour?.title }}</p>
+                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">
+                                    {{
+                        programDetails?.dayFour?.title }}</p>
                             </v-col>
                         </v-row>
                         <v-row dense>
@@ -225,8 +229,9 @@
                                 <div class="day-count">Day 5</div>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">{{
-                                    programDetails?.dayFive?.title }}</p>
+                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">
+                                    {{
+                        programDetails?.dayFive?.title }}</p>
                             </v-col>
                         </v-row>
                         <v-row dense>
@@ -247,8 +252,9 @@
                                 <div class="day-count">Day 6</div>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">{{
-                                    programDetails?.daySix?.title }}</p>
+                                <p class="ms-5 text-subtitle-1 text-teal-darken-1 text-teal-darken-1 font-weight-bold">
+                                    {{
+                        programDetails?.daySix?.title }}</p>
                             </v-col>
                         </v-row>
                         <v-row dense>

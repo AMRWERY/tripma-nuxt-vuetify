@@ -31,7 +31,7 @@ export const useProgrammesCards = defineStore("programmesCards", {
         return (this.filteredPlacesArray = this.places);
       } else {
         return (this.filteredPlacesArray = this.places.filter(
-          (offer) => offer.flights === selectedFilter
+          (offer) => offer.car === selectedFilter
         ));
       }
     },

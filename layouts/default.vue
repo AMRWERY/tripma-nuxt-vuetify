@@ -11,7 +11,8 @@
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.profile') }}</v-tooltip>
                     <v-icon icon="mdi-account" size="large" />
                 </v-btn>
-                <v-btn v-if="isAuthenticated && userEmail === 'amrmounir2@gmail.com'" variant="text" icon to="/dashboard">
+                <v-btn v-if="isAuthenticated && userEmail === 'amrmounir2@gmail.com'" variant="text" icon
+                    to="/dashboard">
                     <v-tooltip activator="parent" location="bottom">{{ $t('tooltip.dashboard') }}</v-tooltip>
                     <v-icon icon="mdi-monitor-dashboard" size="large" />
                 </v-btn>
@@ -40,8 +41,8 @@
                 </v-list>
                 <template v-slot:append>
                     <div class="pa-2">
-                        <v-btn v-if="isAuthenticated" block color="indigo" rounded="lg" size="large" class="text-capitalize"
-                            @click="logout">
+                        <v-btn v-if="isAuthenticated" block color="indigo" rounded="lg" size="large"
+                            class="text-capitalize" @click="logout">
                             {{ $t('btn.logout') }}
                         </v-btn>
                     </div>

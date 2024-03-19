@@ -5,8 +5,8 @@
                 <v-card class="mt-10" elevation="6">
                     <v-row>
                         <v-col cols="12" md="6" class="blue rounded-bl-xl">
-                            <v-img src="https://themehut.co/html/geair/assets/img/slider/slider_bg01.jpg" :aspect-ratio="1"
-                                cover height="725" />
+                            <v-img src="https://themehut.co/html/geair/assets/img/slider/slider_bg01.jpg"
+                                :aspect-ratio="1" cover height="725" />
                         </v-col>
                         <v-col cols="12" md="6">
                             <v-card-text class="mt-12">
@@ -32,16 +32,17 @@
                                             <v-text-field :label="$t('auth.email')" variant="outlined" density="compact"
                                                 color="blue" v-model="email" :rules="emailRules"
                                                 prepend-inner-icon="mdi-at" />
-                                            <v-text-field :label="$t('auth.password')" variant="outlined" density="compact"
-                                                color="blue" v-model="password" :rules="passwordRules"
+                                            <v-text-field :label="$t('auth.password')" variant="outlined"
+                                                density="compact" color="blue" v-model="password" :rules="passwordRules"
                                                 :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
                                                 :type="show ? 'text' : 'password'" @click:append-inner="show = !show"
                                                 prepend-inner-icon="mdi-lock" />
                                             <v-btn type="submit" color="indigo" block class="text-capitalize">{{
-                                                $t('auth.sign_up') }}</v-btn>
+                                    $t('auth.sign_up') }}</v-btn>
                                         </v-form>
 
-                                        <h5 class="text-center text-grey mt-4 mb-3">{{ $t('auth.or_sign_up_using') }}</h5>
+                                        <h5 class="text-center text-grey mt-4 mb-3">{{ $t('auth.or_sign_up_using') }}
+                                        </h5>
                                         <div class="mb-16">
                                             <v-btn variant="outlined" color="black" block rounded="xl" size="large"
                                                 class="text-capitalize" @click="signUpWithGoogleAccount">
@@ -56,7 +57,7 @@
                                             </v-card-text>
                                             <div class="text-center">
                                                 <nuxt-link class="text-capitalize text-blue" to="/login">{{
-                                                    $t('auth.back_to_login') }}</nuxt-link>
+                                    $t('auth.back_to_login') }}</nuxt-link>
                                             </div>
                                         </div>
                                     </v-col>
@@ -69,7 +70,7 @@
         </v-row>
     </v-container>
 </template>
-  
+
 <script setup>
 import { useAuthStore } from '@/stores/authStore'
 import { useI18n } from 'vue-i18n'
@@ -148,4 +149,5 @@ const validateFields = () => {
 <style scoped>
 .card-text {
     text-align: center;
-}</style>
+}
+</style>

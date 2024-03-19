@@ -9,7 +9,7 @@
                                 <h4 class="text-center">{{ $t('auth.login_into_your_account') }}</h4>
                                 <h6 class="text-center text-grey">{{
                                     $t('auth.login_into_your_account_so_you_can_continue_check') }} <br>{{
-        $t('auth.our_services') }}</h6>
+                                    $t('auth.our_services') }}</h6>
                                 <v-row align="center" justify="center">
                                     <v-col cols="12" sm="8">
                                         <v-form @submit.prevent="signIn">
@@ -20,12 +20,14 @@
                                                 <nuxt-link class="text-caption text-blue text-decoration-none"
                                                     to="/forget-password">{{ $t('auth.forget_password') }}</nuxt-link>
                                             </div>
-                                            <v-text-field :label="$t('auth.password')" variant="outlined" density="compact"
-                                                color="blue" :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                                            <v-text-field :label="$t('auth.password')" variant="outlined"
+                                                density="compact" color="blue"
+                                                :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
                                                 :type="show ? 'text' : 'password'" @click:append-inner="show = !show"
-                                                v-model="password" :rules="passwordRules" prepend-inner-icon="mdi-lock" />
+                                                v-model="password" :rules="passwordRules"
+                                                prepend-inner-icon="mdi-lock" />
                                             <v-btn type="submit" color="indigo" block class="text-capitalize">{{
-                                                $t('btn.login') }}</v-btn>
+                                    $t('btn.login') }}</v-btn>
                                         </v-form>
                                         <h5 class="text-center text-grey mt-4 mb-3">{{ $t('auth.or_login_using') }}</h5>
                                         <div class="mb-16">
@@ -37,14 +39,15 @@
                                         </div>
                                         <div class="card-text">
                                             <v-card-text class="text-blue">
-                                                <h3 class="text-center">{{ $t('auth.do_not_have_an_account_yet?') }}</h3>
+                                                <h3 class="text-center">{{ $t('auth.do_not_have_an_account_yet?') }}
+                                                </h3>
                                                 <h6 class="text-center">{{
-                                                    $t("auth.let_is_get_you_all_set_up_so_you_can_start_creating_your_first")
-                                                }}<br> {{ $t('auth.onboarding_experience') }}</h6>
+                                    $t("auth.let_is_get_you_all_set_up_so_you_can_start_creating_your_first")
+                                }}<br> {{ $t('auth.onboarding_experience') }}</h6>
                                             </v-card-text>
                                             <div class="text-center">
                                                 <nuxt-link class="text-capitalize text-blue" to="/sign-up">{{
-                                                    $t('auth.sign_up') }}</nuxt-link>
+                                    $t('auth.sign_up') }}</nuxt-link>
                                             </div>
                                         </div>
                                     </v-col>
@@ -52,8 +55,8 @@
                             </v-card-text>
                         </v-col>
                         <v-col cols="12" md="6" class="blue rounded-bl-xl">
-                            <v-img src="https://themehut.co/html/geair/assets/img/slider/slider_bg01.jpg" :aspect-ratio="1"
-                                cover height="725" />
+                            <v-img src="https://themehut.co/html/geair/assets/img/slider/slider_bg01.jpg"
+                                :aspect-ratio="1" cover height="725" />
                         </v-col>
                     </v-row>
                 </v-card>
@@ -61,7 +64,7 @@
         </v-row>
     </v-container>
 </template>
-  
+
 <script setup>
 import { useAuthStore } from '@/stores/authStore'
 import { useI18n } from 'vue-i18n'

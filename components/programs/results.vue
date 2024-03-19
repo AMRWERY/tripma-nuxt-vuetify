@@ -1,7 +1,7 @@
 <template>
     <v-row>
         <v-col cols="6">
-            <v-select :items="['Show All', 'Include Flight', 'Not Include Flight']" variant="outlined" density="comfortable"
+            <v-select :items="['Show All', 'Include Car', 'Not Include Car']" variant="outlined" density="comfortable"
                 class="select" v-model="selectedFilter" @change="filterPlaces()" />
         </v-col>
         <v-col cols="6">
